@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ZipWeather</title>
+    <link rel="icon" type="image/png" href="https://o.remove.bg/downloads/155e6674-5abe-462b-8b1b-ce1d30ebb5c1/image-removebg-preview.png">
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.7.1/dist/leaflet.css" />
+    <style>
+        body, html {
+            margin: 0;
+            padding: 0;
+            height: 100%;
+            display: flex;
+            flex-direction: column;
+        }
+        #toolbar {
+            background-color: #AAD3DF;
+            color: black;
+            display: flex;
+            align-items: center;
+            height: 15%;
+            padding: 1em;
+            box-sizing: border-box;
+            z-index: 1000;
+            justify-content: space-between;
+            border: 2px solid #000000;
+        }
+        #input-container {
+            display: flex;
+            align-items: center;
+        }
+        #zipcode {
+            margin-right: 0.5em;
+        }
+        #weatherInfo {
+            display: flex;
+            flex-direction: column;
+            width: 40%;
+            align-items: flex-end;
+        }
+        #weatherInfo p {
+            margin: 0.2em 0;
+        }
+        #map {
+            flex-grow: 1;
+            width: 100%;
+        }
+        .logo {
+            margin-left: 7em;
+            width: 40px;
+            height: 40px;
+        }
+        #toggleUnitButton {
+            background-color: #AAD3DF;
+            color: black;
+            border: none;
+            padding: 0.5em 1em;
+            cursor: pointer;
+            margin-left: -7em;
+        }
+    </style>
+</head>
+<body>
+    <div id="toolbar">
+        <div id="input-container">
+            <input type="text" id="zipcode" placeholder="Enter Zipcode">
+            <input type="text" id="countryCode" placeholder="Enter Country Code (US)">
+        </div>
+        <button id="toggleUnitButton">Toggle Unit</button>
+        <img class="logo" src="https://o.remove.bg/downloads/155e6674-5abe-462b-8b1b-ce1d30ebb5c1/image-removebg-preview.png" alt="Logo">
+        <div id="weatherInfo">
+            <p id="temperature"></p>
+            <p id="description"></p>
+            <p id="humidity"></p>
+            <p id="city"></p>
+        </div>
+    </div>
+    <div id="map"></div>
+    <script src="https://unpkg.com/leaflet@1.7.1/dist/leaflet.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>
